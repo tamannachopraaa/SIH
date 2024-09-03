@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url('BG1.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center calc(50% + 68px);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Scrolling News Headlines Animation */
+.news-ticker {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-ticker p {
+    font-size: 1.1em;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: scroll 15s linear infinite;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+@keyframes scroll {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.signup-box {
+    position: relative;
+    width: 450px;
+    height: 570px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: color 0.5s ease;
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 20px 0;
+    border-bottom: 2px solid #fff;
+    transition: border-color 0.5s ease;
+}
+
+.input-box input:focus {
+    border-bottom-color: red;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    /* transform: translateY(-50%); */
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -20px;
+    left: 5px;
+    color: red;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+    transition: all 0.4s ease;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;
+    transition: color 0.5s ease;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: red;
+    color: #000;
+    transform: scale(1.1);
+}
+
+.login-link {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+    transition: color 0.3s ease;
+}
+
+.login-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-link p a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .signup-box {
+        width: 350px;
+        height: 520px;
+    }
+
+    .input-box {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .signup-box {
+        width: 90%;
+        height: auto;
+    }
+
+    .input-box {
+        width: 90%;
+    }
+
+    button {
+        width: 90%;
+    }
+}

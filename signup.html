@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+
+
+/* Label styling */
+
+/* Container for interest inputs */
+/* Container for interests and input fields */
+#interestsContainer {
+  margin-bottom: 16px;
+}
+
+/* Style for the interest input field */
+.interest-input {
+  display: block;
+  width: calc(100% - 22px); /* Adjust width considering padding and border */
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style for the button */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#addInterest {
+  background-color: #28a745; /* Green color */
+}
+
+#addInterest:hover {
+  background-color: #218838; /* Darker green */
+}
+
+/* Style for the displayed list of interests */
+#interestsDisplay {
+  list-style-type: none;
+  padding: 0;
+}
+
+#interestsDisplay li {
+  padding: 5px 0;
+}
+
+
+</style>
+</head>
+
+<body>
+    <section>
+       
+        <div class="signup-box">
+            <form  class="sign-up" id="signupForm" >
+                <h2>Sign Up</h2>
+                <div class="input-box">
+                    <input type="text" id="name" name="data[NAME]" required>
+                    <label>Full Name</label>
+                    <i class="icon fas fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="email" name="data[EMAIL]" required>
+                    <label>Email</label>
+                    <i class="icon fas fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="University" name="data[UNIVERSITY]" required>
+                    <label>University Name</label>
+                    <i class="icon fas fa-user"></i>
+                </div>
+               
+              
+                <div class="input-box">
+                    <input type="password" id="password" name="data[PASSWORD]" required>
+                    <label>Password</label>
+                    <i class="icon fas fa-lock"></i>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="login-link">
+                    <p>Already have an account? <a href="Login.html">Login Here</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script>
+   
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const fullName = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const universityName = document.getElementById('University').value;
+        const password = document.getElementById('password').value;
+      
+        
+          
+
+const data = {
+    NAME: fullName,
+    EMAIL: email,
+    UNIVERSITY: universityName,
+    PASSWORD: password,
+    
+};
+
+
+        // Send AJAX request to SheetDB
+        fetch('https://sheetdb.io/api/v1/xg4tg52x1b6gk', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+        .then(data => {
+            alert('Account created successfully! You can now log in.');
+            document.getElementById('signupForm').reset(); // Reset form fields
+            interests = [];
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('There was an error creating your account. Please try again.');
+        });
+    });
+ 
+
+</script>
+<script src="script2.js"></script>
+</html>

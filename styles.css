@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #f3f7fb; /* Light background color */
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50; /* Dark blue for the title */
+    font-size: 2.3em;
+    letter-spacing: 1px;
+}
+
+#next-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #52ad5d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#next-button:hover {
+    background-color:#52ad5d;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 boxes per row */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.skill-box {
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.image-container {
+    width: 130px;
+    height: 130px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center the circle */
+    transition: opacity 0.3s; /* Fade effect */
+    border: 2px solid transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s; /* Fade effect */
+}
+
+.skill-box.selected .image-container img {
+    opacity: 0.5; /* Make image translucent when selected */
+}
+
+.skill-name {
+    margin-top: 15px; /* Space between the image and text */
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Dark text color for contrast */
+    display: block; /* Ensures text is displayed on a new line */
+}

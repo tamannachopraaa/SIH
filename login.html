@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <section>
+        <div class="login-box">
+            <form action="" class="login" id="loginForm">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <input type="text" id="email" name="email" required>
+                    <label>Email</label>
+                    <i class="icon fas fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" name="password" required>
+                    <label>Password</label>
+                    <i class="icon fas fa-lock"></i>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login">Login</button>
+                <div class="register-link">
+                    <p>Dont have an account? <a href="Signup.html">Register Here</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Fetch the data from SheetDB
+        fetch('https://sheetdb.io/api/v1/xg4tg52x1b6gk/search?EMAIL=' + email)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length === 0) {
+                    alert('No account found with this email.');
+                } else {
+                    const user = data[0]; // Assuming email is unique
+                    if (user.PASSWORD === password) {
+                        alert('Login successful!');
+                        // Redirect to another page or do something after successful login
+                        window.location.href = 'home.html';
+                    } else {
+                        alert('Incorrect password. Please try again.');
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error logging you in. Please try again.');
+            });
+    });
+    const apiUrl = 'https://sheetdb.io/api/v1/xg4tg52x1b6gk';
+
+fetch(apiUrl)
+  .then(response => response.json())  // Parse the JSON data from the response
+  .then(data => {
+    console.log('Data fetched:', data);
+    // Process the data here (e.g., display it on the page)
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+ 
+</script>
+<script src="script2.js"></script>
+</html>

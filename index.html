@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Product Landing Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-section {
+            background-color: black;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .main-section h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .main-section p {
+            font-size: 1.5rem;
+        }
+
+        .info-section {
+            padding: 50px 0;
+        }
+
+        .blockquote {
+            border-left: 4px solid #0f1010;
+            padding-left: 20px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+            color: #333;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            padding: 20px 0;
+            color: white;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-custom {
+            background-color: #070708; /* Navbar color */
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff; /* Nav link color */
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #ffffff; /* Brand name color */
+        }
+
+        .btn-custom {
+            background-color: #e39887; /* Button color */
+            color: #ffffff; /* Button text color */
+        }
+
+        .btn-custom:hover {
+            background-color: #b77285; /* Button color on hover */
+        }
+        .login,.signup{
+            border-radius: 10px;
+            background-color: lavender;
+            color: black;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="#">PeerConnect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#connect">CONNECT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#profile">PROFILE</a>
+                </li>
+            </ul>
+            <button class="login">Login</button>
+            <button class="signup">Sign Up</button>
+            
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <header id="home" class="main-section text-center text-white">
+        <div class="container">
+            <h1 class="display-3">PeerConnect</h1>
+            <a href="#connect" class="btn btn-custom btn-lg my-3">Start Networking</a>
+            <p class="lead">Experience the future with our revolutionary product.</p>
+        </div>
+    </header>
+
+    <!-- Flex Information Section -->
+    <section class="info-section text-center my-5">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center">
+                <blockquote class="blockquote">
+                    <p class="mb-0">"Our product is designed to change the way you experience technology. Seamlessly integrate it into your daily life and unlock new possibilities."</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2024 PeerConnect. All Rights Reserved.</p>
+            <a href="footer.html">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script src="script2.js"></script>
+</html>
