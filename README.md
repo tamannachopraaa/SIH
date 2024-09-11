@@ -1,6 +1,6 @@
-# Smart India Hackathon
-Team: Curious Coders
-Problem Statement ID: SIH 1586
-Problem Statement Title- Skill based Networking and Study Group Platform for College Students
-Theme- Smart Education
-PS Category- Software
+# Smart India Hackathon <br>
+Team: Curious Coders <br>
+Problem Statement ID: SIH 1586 <br>
+Problem Statement Title- Skill based Networking and Study Group Platform for College Students <br>
+Theme- Smart Education <br>
+PS Category- Software <br>
